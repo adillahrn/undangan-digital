@@ -1,13 +1,15 @@
 {
   "name": "undangan-pernikahan",
   "version": "1.0.0",
-  "description": "Undangan pernikahan digital dengan backend RSVP sederhana",
+  "description": "Undangan pernikahan digital dengan backend RSVP - Vercel Postgres",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "node server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "@vercel/postgres": "^0.10.0"
   }
 }

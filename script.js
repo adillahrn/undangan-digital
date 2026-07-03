@@ -1,5 +1,6 @@
 /* ====================================
    WEDDING INVITATION - MAIN SCRIPT
+   M23 Template Structure
    ==================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -32,26 +33,28 @@ document.addEventListener('DOMContentLoaded', function () {
     // Lock scroll initially
     document.body.classList.add('no-scroll');
 
-    btnOpen.addEventListener('click', function () {
-        // Hide cover
-        cover.classList.add('hidden');
-        // Unlock scroll
-        document.body.classList.remove('no-scroll');
-        // Show music player & nav
-        musicPlayer.classList.add('show');
-        bottomNav.classList.add('show');
-        // Play music
-        playMusic();
-        // Start particles
-        createParticles();
-        // Scroll to top
-        window.scrollTo({ top: 0, behavior: 'instant' });
+    if (btnOpen) {
+        btnOpen.addEventListener('click', function () {
+            // Hide cover
+            cover.classList.add('hidden');
+            // Unlock scroll
+            document.body.classList.remove('no-scroll');
+            // Show music player & nav
+            musicPlayer.classList.add('show');
+            bottomNav.classList.add('show');
+            // Play music
+            playMusic();
+            // Start particles
+            createParticles();
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'instant' });
 
-        // Remove cover from DOM after transition
-        setTimeout(() => {
-            cover.style.display = 'none';
-        }, 1500);
-    });
+            // Remove cover from DOM after transition
+            setTimeout(() => {
+                cover.style.display = 'none';
+            }, 1500);
+        });
+    }
 
     // ===== MUSIC PLAYER =====
     const btnMusic = document.getElementById('btnMusic');
@@ -62,13 +65,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if (bgMusic) {
             bgMusic.play().then(() => {
                 isMusicPlaying = true;
-                btnMusic.classList.add('playing');
-                musicIcon.className = 'fas fa-music';
+                if (btnMusic) btnMusic.classList.add('playing');
+                if (musicIcon) musicIcon.className = 'fas fa-music';
             }).catch(err => {
                 console.log('Autoplay prevented:', err);
                 isMusicPlaying = false;
-                btnMusic.classList.remove('playing');
-                musicIcon.className = 'fas fa-volume-mute';
+                if (btnMusic) btnMusic.classList.remove('playing');
+                if (musicIcon) musicIcon.className = 'fas fa-volume-mute';
             });
         }
     }
@@ -77,18 +80,20 @@ document.addEventListener('DOMContentLoaded', function () {
         if (bgMusic) {
             bgMusic.pause();
             isMusicPlaying = false;
-            btnMusic.classList.remove('playing');
-            musicIcon.className = 'fas fa-volume-mute';
+            if (btnMusic) btnMusic.classList.remove('playing');
+            if (musicIcon) musicIcon.className = 'fas fa-volume-mute';
         }
     }
 
-    btnMusic.addEventListener('click', function () {
-        if (isMusicPlaying) {
-            pauseMusic();
-        } else {
-            playMusic();
-        }
-    });
+    if (btnMusic) {
+        btnMusic.addEventListener('click', function () {
+            if (isMusicPlaying) {
+                pauseMusic();
+            } else {
+                playMusic();
+            }
+        });
+    }
 
     // Handle tab visibility
     document.addEventListener('visibilitychange', function () {
@@ -132,18 +137,50 @@ document.addEventListener('DOMContentLoaded', function () {
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
+    // ===== SWIPER GALLERY =====
+    const gallerySwiper = new Swiper('.gallery-swiper', {
+        slidesPerView: 1.3,
+        centeredSlides: true,
+        spaceBetween: 15,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            480: {
+                slidesPerView: 1.5,
+                spaceBetween: 20,
+            },
+        },
+        effect: 'coverflow',
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2,
+            slideShadows: false,
+        },
+    });
+
     // ===== GIFT SECTION TOGGLE =====
     const btnGiftToggle = document.getElementById('btnGiftToggle');
     const giftCards = document.getElementById('giftCards');
 
-    btnGiftToggle.addEventListener('click', function () {
-        giftCards.classList.toggle('show');
-        if (giftCards.classList.contains('show')) {
-            btnGiftToggle.innerHTML = '<i class="fas fa-times"></i> TUTUP';
-        } else {
-            btnGiftToggle.innerHTML = '<i class="fas fa-gift"></i> KLIK DISINI';
-        }
-    });
+    if (btnGiftToggle && giftCards) {
+        btnGiftToggle.addEventListener('click', function () {
+            giftCards.classList.toggle('show');
+            if (giftCards.classList.contains('show')) {
+                btnGiftToggle.innerHTML = '<i class="fas fa-times"></i> TUTUP';
+            } else {
+                btnGiftToggle.innerHTML = '<i class="fas fa-gift"></i> KLIK DISINI';
+            }
+        });
+    }
 
     // ===== COPY TO CLIPBOARD =====
     window.copyToClipboard = function (elementId, btn) {
@@ -225,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <span class="comment-badge ${badgeClass}">${c.attendance}</span>
                     </div>
                     <p class="comment-text">${escapeHtml(c.message)}</p>
-                    <span class="comment-date">${c.date}</span>
+                    <span class="comment-date">${c.date || ''}</span>
                 </div>
             `;
             list.appendChild(item);
@@ -241,84 +278,98 @@ document.addEventListener('DOMContentLoaded', function () {
     fetchComments(); // Initial load
 
     const rsvpForm = document.getElementById('rsvpForm');
-    rsvpForm.addEventListener('submit', function (e) {
-        e.preventDefault();
+    if (rsvpForm) {
+        rsvpForm.addEventListener('submit', function (e) {
+            e.preventDefault();
 
-        const name = document.getElementById('rsvpName').value.trim();
-        const message = document.getElementById('rsvpMessage').value.trim();
-        const attendance = document.getElementById('rsvpAttendance').value;
+            const name = document.getElementById('rsvpName').value.trim();
+            const message = document.getElementById('rsvpMessage').value.trim();
+            const attendance = document.getElementById('rsvpAttendance').value;
 
-        if (!name || !message || !attendance) return;
+            if (!name || !message || !attendance) return;
 
-        const now = new Date();
-        const dateStr = now.toLocaleDateString('id-ID', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit'
-        });
+            const now = new Date();
+            const dateStr = now.toLocaleDateString('id-ID', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
 
-        const comment = { name, message, attendance, date: dateStr };
-        
-        // Show loading state
-        const btn = rsvpForm.querySelector('.btn-submit');
-        const origText = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
-        btn.disabled = true;
+            const comment = { name, message, attendance, date: dateStr };
 
-        fetch('/api/comments', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(comment)
-        })
-        .then(res => res.json())
-        .then(data => {
-            comments.push(data);
-            updateStats();
-            renderComments();
-            rsvpForm.reset();
-            
-            // Show success feedback
-            btn.innerHTML = '<i class="fas fa-check"></i> Terkirim!';
-            btn.style.background = '#3D9A62';
-            setTimeout(() => {
+            // Show loading state
+            const btn = rsvpForm.querySelector('.btn-submit');
+            const origText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+            btn.disabled = true;
+
+            fetch('/api/comments', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(comment)
+            })
+            .then(res => res.json())
+            .then(data => {
+                comments.push(data);
+                updateStats();
+                renderComments();
+                rsvpForm.reset();
+
+                // Show success feedback
+                btn.innerHTML = '<i class="fas fa-check"></i> Terkirim!';
+                btn.style.background = '#3D9A62';
+                setTimeout(() => {
+                    btn.innerHTML = origText;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 2000);
+            })
+            .catch(err => {
+                console.error('Error saving comment:', err);
                 btn.innerHTML = origText;
-                btn.style.background = '';
                 btn.disabled = false;
-            }, 2000);
-        })
-        .catch(err => {
-            console.error('Error saving comment:', err);
-            btn.innerHTML = origText;
-            btn.disabled = false;
-            alert('Gagal mengirim ucapan, coba lagi.');
+                alert('Gagal mengirim ucapan, coba lagi.');
+            });
         });
-    });
+    }
 
-    // ===== GALLERY LIGHTBOX =====
-    const galleryItems = document.querySelectorAll('.gallery-item img');
+    // ===== GALLERY LIGHTBOX (Swiper slides) =====
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxClose = document.getElementById('lightboxClose');
 
-    galleryItems.forEach(img => {
-        img.addEventListener('click', function () {
-            lightboxImg.src = this.src;
+    // Delegate click on swiper slide images
+    document.querySelector('.gallery-swiper')?.addEventListener('click', function (e) {
+        const img = e.target.closest('img');
+        if (img) {
+            lightboxImg.src = img.src;
             lightbox.classList.add('show');
             document.body.style.overflow = 'hidden';
-        });
+        }
     });
 
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', function (e) {
-        if (e.target === lightbox) closeLightbox();
-    });
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+    }
+    if (lightbox) {
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+    }
 
     function closeLightbox() {
-        lightbox.classList.remove('show');
-        document.body.style.overflow = '';
+        if (lightbox) {
+            lightbox.classList.remove('show');
+            document.body.style.overflow = '';
+        }
     }
+
+    // ESC key to close lightbox
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeLightbox();
+    });
 
     // ===== BOTTOM NAVIGATION ACTIVE STATE =====
     const navItems = document.querySelectorAll('.nav-item');
@@ -358,6 +409,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // ===== FLOATING PARTICLES =====
     function createParticles() {
         const container = document.getElementById('floatingElements');
+        if (!container) return;
         const particleCount = 25;
 
         for (let i = 0; i < particleCount; i++) {

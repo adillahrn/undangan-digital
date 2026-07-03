@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Wedding Invitation</title>
-    <meta name="description" content="Undangan Pernikahan Digital - Kami mengundang Bapak/Ibu/Saudara/i untuk hadir di hari bahagia kami.">
-    <meta property="og:title" content="Wedding Invitation">
+    <title>Wedding Invitation - Adit & Fiona</title>
+    <meta name="description" content="Undangan Pernikahan Digital Adit & Fiona - Kami mengundang Bapak/Ibu/Saudara/i untuk hadir di hari bahagia kami.">
+    <meta property="og:title" content="Wedding Invitation - Adit & Fiona">
     <meta property="og:description" content="Kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu.">
     <meta property="og:type" content="website">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Marcellus&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Italiana&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Marcellus&family=Marcellus+SC&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
     <!-- AOS Animate On Scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -29,20 +32,17 @@
     <div class="cover" id="cover">
         <div class="cover-overlay"></div>
         <div class="cover-content">
-            <div class="cover-ornament-top">
-                <img src="assets/ornament-top.png" alt="ornament" onerror="this.style.display='none'">
-            </div>
-            <p class="cover-subtitle" data-aos="fade-up">The Wedding Of</p>
-            <h1 class="cover-names" data-aos="fade-up" data-aos-delay="200">Adit & Fiona</h1>
-            <div class="cover-divider" data-aos="fade-up" data-aos-delay="300"></div>
+            <p class="cover-label" data-aos="fade-up">The Wedding Of</p>
+            <h1 class="cover-names" data-aos="fade-up" data-aos-delay="200">
+                Adit
+                <span>&</span>
+                Fiona
+            </h1>
             <p class="cover-to" data-aos="fade-up" data-aos-delay="400">Kepada Yth.<br>Bapak/Ibu/Saudara/i</p>
-            <h2 class="cover-guest-name" id="guestName" data-aos="fade-up" data-aos-delay="500">Nama Tamu</h2>
+            <h2 class="cover-guest" id="guestName" data-aos="fade-up" data-aos-delay="500">Nama Tamu</h2>
             <button class="btn-open" id="btnOpen" data-aos="fade-up" data-aos-delay="600">
                 <i class="fas fa-envelope-open-text"></i> BUKA UNDANGAN
             </button>
-            <div class="cover-ornament-bottom">
-                <img src="assets/ornament-bottom.png" alt="ornament" onerror="this.style.display='none'">
-            </div>
         </div>
     </div>
 
@@ -53,11 +53,11 @@
         <section class="section hero-section" id="top">
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <p class="hero-subtitle" data-aos="fade-up">THE WEDDING OF</p>
+                <p class="hero-label" data-aos="fade-up">THE WEDDING OF</p>
                 <h1 class="hero-names" data-aos="zoom-in" data-aos-delay="200">
-                    <span class="groom-name">Adit</span>
+                    Adit
                     <span class="hero-ampersand">&</span>
-                    <span class="bride-name">Fiona</span>
+                    Fiona
                 </h1>
                 <p class="hero-date" data-aos="fade-up" data-aos-delay="400">16 . 07 . 2026</p>
             </div>
@@ -68,9 +68,9 @@
 
         <!-- COUNTDOWN SECTION -->
         <section class="section countdown-section" id="countdown">
-            <div class="section-bg-overlay"></div>
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Hitung Mundur</h2>
+                <p class="section-title" data-aos="fade-up">Save The Date</p>
+                <h2 class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Hitung Mundur</h2>
                 <div class="countdown-wrapper" data-aos="zoom-in" data-aos-delay="200">
                     <div class="countdown-item">
                         <span class="countdown-number" id="days">00</span>
@@ -110,45 +110,45 @@
 
         <!-- COUPLE / MEMPELAI SECTION -->
         <section class="section couple-section" id="couple">
-            <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Mempelai</h2>
-                <div class="couple-wrapper">
-                    <!-- Groom -->
-                    <div class="couple-card" data-aos="fade-right" data-aos-delay="200">
-                        <div class="couple-photo-frame">
-                            <img src="assets/groom.jpg" alt="Mempelai Pria" class="couple-photo" onerror="this.src='https://via.placeholder.com/300x400/1a1a2e/e0d5c7?text=Mempelai+Pria'">
-                        </div>
-                        <h3 class="couple-name">Aditya Ramadani</h3>
-                        <p class="couple-info">Putra dari<br>Bpk. Eko Sujarno & Ibu Patmini</p>
-                        <div class="couple-social">
-                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
+            <div class="couple-header" data-aos="fade-up">
+                <p class="section-title">Bride & Groom</p>
+                <h2 class="section-subtitle">Mempelai</h2>
+            </div>
 
-                    <div class="couple-ampersand" data-aos="zoom-in" data-aos-delay="300">
-                        <span>&</span>
-                    </div>
+            <!-- Groom -->
+            <div class="couple-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="couple-photo-wrapper">
+                    <img src="assets/groom.png" alt="Mempelai Pria" loading="lazy">
+                </div>
+                <div class="couple-info">
+                    <h3 class="couple-name">Aditya Ramadani</h3>
+                    <p class="couple-parent">Putra dari<br>Bpk. Eko Sujarno & Ibu Patmini</p>
+                    <a href="#" class="btn-ig" target="_blank" rel="noopener">
+                        <i class="fab fa-instagram"></i> @aditya
+                    </a>
+                </div>
+            </div>
 
-                    <!-- Bride -->
-                    <div class="couple-card" data-aos="fade-left" data-aos-delay="400">
-                        <div class="couple-photo-frame">
-                            <img src="assets/bride.jpg" alt="Mempelai Wanita" class="couple-photo" onerror="this.src='https://via.placeholder.com/300x400/1a1a2e/e0d5c7?text=Mempelai+Wanita'">
-                        </div>
-                        <h3 class="couple-name">Fiona Ridwan</h3>
-                        <p class="couple-info">Putri dari<br>Bpk. Ridwan & Ibu Nadri</p>
-                        <div class="couple-social">
-                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
+            <!-- Bride -->
+            <div class="couple-item couple-item-reverse" data-aos="fade-up" data-aos-delay="300">
+                <div class="couple-photo-wrapper">
+                    <img src="assets/bride.png" alt="Mempelai Wanita" loading="lazy">
+                </div>
+                <div class="couple-info">
+                    <h3 class="couple-name">Fiona Ridwan</h3>
+                    <p class="couple-parent">Putri dari<br>Bpk. Ridwan & Ibu Nadri</p>
+                    <a href="#" class="btn-ig" target="_blank" rel="noopener">
+                        <i class="fab fa-instagram"></i> @fiona
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- EVENT / ACARA SECTION -->
         <section class="section event-section" id="event">
-            <div class="section-bg-overlay"></div>
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Waktu & Tempat</h2>
+                <p class="section-title" data-aos="fade-up">Wedding Event</p>
+                <h2 class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Waktu & Tempat</h2>
                 <div class="event-wrapper">
                     <!-- Akad -->
                     <div class="event-card" data-aos="fade-up" data-aos-delay="200">
@@ -162,7 +162,7 @@
                             <p><i class="fas fa-map-marker-alt"></i> Ngalau i</p>
                             <p class="event-address">Jl. Raya Bukittinggi-Payakumbuh, Balai Panjang, Kec. Payakumbuh Selatan, Kota Payakumbuh, Sumatera Barat</p>
                         </div>
-                        <a href="https://maps.app.goo.gl/cAmCabLeTnN53myLA" target="_blank" class="btn-maps">
+                        <a href="https://maps.app.goo.gl/cAmCabLeTnN53myLA" target="_blank" class="btn-maps" rel="noopener">
                             <i class="fas fa-map-marked-alt"></i> Buka Maps
                         </a>
                     </div>
@@ -179,7 +179,7 @@
                             <p><i class="fas fa-map-marker-alt"></i> Ngalau i</p>
                             <p class="event-address">Jl. Raya Bukittinggi-Payakumbuh, Balai Panjang, Kec. Payakumbuh Selatan, Kota Payakumbuh, Sumatera Barat</p>
                         </div>
-                        <a href="https://maps.app.goo.gl/cAmCabLeTnN53myLA" target="_blank" class="btn-maps">
+                        <a href="https://maps.app.goo.gl/cAmCabLeTnN53myLA" target="_blank" class="btn-maps" rel="noopener">
                             <i class="fas fa-map-marked-alt"></i> Buka Maps
                         </a>
                     </div>
@@ -187,38 +187,33 @@
             </div>
         </section>
 
-        <!-- GALLERY SECTION -->
+        <!-- GALLERY SECTION (Swiper) -->
         <section class="section gallery-section" id="gallery">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Galeri Foto</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="assets/gallery-1.jpg" alt="Gallery 1" onerror="this.src='https://via.placeholder.com/400x500/1a1a2e/e0d5c7?text=Foto+1'" loading="lazy">
+                <p class="section-title" data-aos="fade-up">Our Moments</p>
+                <h2 class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Galeri Foto</h2>
+            </div>
+            <div class="gallery-swiper swiper" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="assets/gallery-1.png" alt="Gallery 1" loading="lazy">
                     </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="assets/gallery-2.jpg" alt="Gallery 2" onerror="this.src='https://via.placeholder.com/400x300/2d1b4e/e0d5c7?text=Foto+2'" loading="lazy">
+                    <div class="swiper-slide">
+                        <img src="assets/gallery-2.png" alt="Gallery 2" loading="lazy">
                     </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="assets/gallery-3.jpg" alt="Gallery 3" onerror="this.src='https://via.placeholder.com/400x400/1a1a2e/e0d5c7?text=Foto+3'" loading="lazy">
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
-                        <img src="assets/gallery-4.jpg" alt="Gallery 4" onerror="this.src='https://via.placeholder.com/400x350/2d1b4e/e0d5c7?text=Foto+4'" loading="lazy">
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
-                        <img src="assets/gallery-5.jpg" alt="Gallery 5" onerror="this.src='https://via.placeholder.com/400x450/1a1a2e/e0d5c7?text=Foto+5'" loading="lazy">
-                    </div>
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
-                        <img src="assets/gallery-6.jpg" alt="Gallery 6" onerror="this.src='https://via.placeholder.com/400x300/2d1b4e/e0d5c7?text=Foto+6'" loading="lazy">
+                    <div class="swiper-slide">
+                        <img src="assets/gallery-3.png" alt="Gallery 3" loading="lazy">
                     </div>
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
         </section>
 
         <!-- LOVE STORY / OUR JOURNEY SECTION -->
         <section class="section story-section" id="story">
-            <div class="section-bg-overlay"></div>
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Our Journey</h2>
+                <p class="section-title" data-aos="fade-up">Love Story</p>
+                <h2 class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Our Journey</h2>
                 <div class="timeline">
                     <div class="timeline-item" data-aos="fade-right">
                         <div class="timeline-dot"></div>
@@ -248,7 +243,7 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <h3 class="timeline-title">Pernikahan</h3>
-                            <span class="timeline-date">April 2025</span>
+                            <span class="timeline-date">Juli 2026</span>
                             <p>Dan Insha Allah di tanggal yang telah ditentukan, kami akan melangsungkan pernikahan dengan niat beribadah karena Allah SWT.</p>
                         </div>
                     </div>
@@ -259,11 +254,12 @@
         <!-- WEDDING GIFT SECTION -->
         <section class="section gift-section" id="gift">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Wedding Gift</h2>
-                <p class="gift-subtitle" data-aos="fade-up" data-aos-delay="100">
+                <p class="section-title" data-aos="fade-up">Wedding Gift</p>
+                <h2 class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Amplop Digital</h2>
+                <p class="gift-subtitle" data-aos="fade-up" data-aos-delay="200">
                     Tanpa mengurangi rasa hormat, bagi Anda yang ingin memberikan tanda kasih untuk kami, dapat melalui:
                 </p>
-                <button class="btn-gift-toggle" id="btnGiftToggle" data-aos="fade-up" data-aos-delay="200">
+                <button class="btn-gift-toggle" id="btnGiftToggle" data-aos="fade-up" data-aos-delay="300">
                     <i class="fas fa-gift"></i> KLIK DISINI
                 </button>
                 <div class="gift-cards" id="giftCards">
@@ -311,12 +307,12 @@
 
         <!-- RSVP / UCAPAN & DOA SECTION -->
         <section class="section rsvp-section" id="rsvp">
-            <div class="section-bg-overlay"></div>
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Ucapan & Doa</h2>
+                <p class="section-title" data-aos="fade-up">RSVP</p>
+                <h2 class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Ucapan & Doa</h2>
 
                 <!-- Attendance Count -->
-                <div class="attendance-stats" data-aos="fade-up" data-aos-delay="100">
+                <div class="attendance-stats" data-aos="fade-up" data-aos-delay="200">
                     <div class="stat-card stat-hadir">
                         <span class="stat-number" id="countHadir">0</span>
                         <span class="stat-label">Hadir</span>
@@ -332,7 +328,7 @@
                 </div>
 
                 <!-- Form -->
-                <form class="rsvp-form" id="rsvpForm" data-aos="fade-up" data-aos-delay="200">
+                <form class="rsvp-form" id="rsvpForm" data-aos="fade-up" data-aos-delay="300">
                     <div class="form-group">
                         <input type="text" id="rsvpName" placeholder="Nama" required>
                     </div>
@@ -347,7 +343,7 @@
                             <option value="Masih Ragu">Masih Ragu</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn-submit">
+                    <button type="submit" class="btn-submit" id="btnSubmit">
                         <i class="fas fa-paper-plane"></i> Kirim
                     </button>
                 </form>
@@ -373,6 +369,10 @@
 
         <!-- FOOTER -->
         <footer class="footer">
+            <div class="footer-social">
+                <a href="#" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+            </div>
             <p>Made with <i class="fas fa-heart"></i> for our special day</p>
         </footer>
 
@@ -423,6 +423,9 @@
 
     <!-- AOS Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Main Script -->
     <script src="script.js"></script>

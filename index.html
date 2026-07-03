@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wedding Invitation</title>
+    <meta name="description" content="Undangan Pernikahan Digital - Kami mengundang Bapak/Ibu/Saudara/i untuk hadir di hari bahagia kami.">
+    <meta property="og:title" content="Wedding Invitation">
+    <meta property="og:description" content="Kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Marcellus&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <!-- AOS Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============ COVER / OPENING ============ -->
+    <div class="cover" id="cover">
+        <div class="cover-overlay"></div>
+        <div class="cover-content">
+            <div class="cover-ornament-top">
+                <img src="assets/ornament-top.png" alt="ornament" onerror="this.style.display='none'">
+            </div>
+            <p class="cover-subtitle" data-aos="fade-up">The Wedding Of</p>
+            <h1 class="cover-names" data-aos="fade-up" data-aos-delay="200">Adit & Fiona</h1>
+            <div class="cover-divider" data-aos="fade-up" data-aos-delay="300"></div>
+            <p class="cover-to" data-aos="fade-up" data-aos-delay="400">Kepada Yth.<br>Bapak/Ibu/Saudara/i</p>
+            <h2 class="cover-guest-name" id="guestName" data-aos="fade-up" data-aos-delay="500">Nama Tamu</h2>
+            <button class="btn-open" id="btnOpen" data-aos="fade-up" data-aos-delay="600">
+                <i class="fas fa-envelope-open-text"></i> BUKA UNDANGAN
+            </button>
+            <div class="cover-ornament-bottom">
+                <img src="assets/ornament-bottom.png" alt="ornament" onerror="this.style.display='none'">
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <main class="main-content" id="mainContent">
+
+        <!-- HERO SECTION -->
+        <section class="section hero-section" id="top">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-subtitle" data-aos="fade-up">THE WEDDING OF</p>
+                <h1 class="hero-names" data-aos="zoom-in" data-aos-delay="200">
+                    <span class="groom-name">Adit</span>
+                    <span class="hero-ampersand">&</span>
+                    <span class="bride-name">Fiona</span>
+                </h1>
+                <p class="hero-date" data-aos="fade-up" data-aos-delay="400">16 . 07 . 2026</p>
+            </div>
+            <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- COUNTDOWN SECTION -->
+        <section class="section countdown-section" id="countdown">
+            <div class="section-bg-overlay"></div>
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Hitung Mundur</h2>
+                <div class="countdown-wrapper" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">Hari</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Jam</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Menit</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Detik</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUOTE / AYAT SECTION -->
+        <section class="section quote-section" id="quote">
+            <div class="container">
+                <div class="quote-card" data-aos="fade-up">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="quote-text">
+                        "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
+                    </p>
+                    <p class="quote-source">— QS. Ar-Rum : 21</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- COUPLE / MEMPELAI SECTION -->
+        <section class="section couple-section" id="couple">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Mempelai</h2>
+                <div class="couple-wrapper">
+                    <!-- Groom -->
+                    <div class="couple-card" data-aos="fade-right" data-aos-delay="200">
+                        <div class="couple-photo-frame">
+                            <img src="assets/groom.jpg" alt="Mempelai Pria" class="couple-photo" onerror="this.src='https://via.placeholder.com/300x400/1a1a2e/e0d5c7?text=Mempelai+Pria'">
+                        </div>
+                        <h3 class="couple-name">Aditya Ramadani</h3>
+                        <p class="couple-info">Putra dari<br>Bpk. Eko Sujarno & Ibu Patmini</p>
+                        <div class="couple-social">
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="couple-ampersand" data-aos="zoom-in" data-aos-delay="300">
+                        <span>&</span>
+                    </div>
+
+                    <!-- Bride -->
+                    <div class="couple-card" data-aos="fade-left" data-aos-delay="400">
+                        <div class="couple-photo-frame">
+                            <img src="assets/bride.jpg" alt="Mempelai Wanita" class="couple-photo" onerror="this.src='https://via.placeholder.com/300x400/1a1a2e/e0d5c7?text=Mempelai+Wanita'">
+                        </div>
+                        <h3 class="couple-name">Fiona Ridwan</h3>
+                        <p class="couple-info">Putri dari<br>Bpk. Ridwan & Ibu Nadri</p>
+                        <div class="couple-social">
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENT / ACARA SECTION -->
+        <section class="section event-section" id="event">
+            <div class="section-bg-overlay"></div>
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Waktu & Tempat</h2>
+                <div class="event-wrapper">
+                    <!-- Akad -->
+                    <div class="event-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="event-icon">
+                            <i class="fas fa-mosque"></i>
+                        </div>
+                        <h3 class="event-name">Akad Nikah</h3>
+                        <div class="event-detail">
+                            <p><i class="far fa-calendar-alt"></i> Kamis, 16 Juli 2026</p>
+                            <p><i class="far fa-clock"></i> 08:00 - 10:00 WIB</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Ngalau i</p>
+                            <p class="event-address">Jl. Raya Bukittinggi-Payakumbuh, Balai Panjang, Kec. Payakumbuh Selatan, Kota Payakumbuh, Sumatera Barat</p>
+                        </div>
+                        <a href="https://maps.app.goo.gl/cAmCabLeTnN53myLA" target="_blank" class="btn-maps">
+                            <i class="fas fa-map-marked-alt"></i> Buka Maps
+                        </a>
+                    </div>
+
+                    <!-- Resepsi -->
+                    <div class="event-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="event-icon">
+                            <i class="fas fa-glass-cheers"></i>
+                        </div>
+                        <h3 class="event-name">Resepsi</h3>
+                        <div class="event-detail">
+                            <p><i class="far fa-calendar-alt"></i> Kamis, 16 Juli 2026</p>
+                            <p><i class="far fa-clock"></i> 10:00 - 17:00 WIB</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Ngalau i</p>
+                            <p class="event-address">Jl. Raya Bukittinggi-Payakumbuh, Balai Panjang, Kec. Payakumbuh Selatan, Kota Payakumbuh, Sumatera Barat</p>
+                        </div>
+                        <a href="https://maps.app.goo.gl/cAmCabLeTnN53myLA" target="_blank" class="btn-maps">
+                            <i class="fas fa-map-marked-alt"></i> Buka Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section class="section gallery-section" id="gallery">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Galeri Foto</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="assets/gallery-1.jpg" alt="Gallery 1" onerror="this.src='https://via.placeholder.com/400x500/1a1a2e/e0d5c7?text=Foto+1'" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="assets/gallery-2.jpg" alt="Gallery 2" onerror="this.src='https://via.placeholder.com/400x300/2d1b4e/e0d5c7?text=Foto+2'" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="assets/gallery-3.jpg" alt="Gallery 3" onerror="this.src='https://via.placeholder.com/400x400/1a1a2e/e0d5c7?text=Foto+3'" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="assets/gallery-4.jpg" alt="Gallery 4" onerror="this.src='https://via.placeholder.com/400x350/2d1b4e/e0d5c7?text=Foto+4'" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="assets/gallery-5.jpg" alt="Gallery 5" onerror="this.src='https://via.placeholder.com/400x450/1a1a2e/e0d5c7?text=Foto+5'" loading="lazy">
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
+                        <img src="assets/gallery-6.jpg" alt="Gallery 6" onerror="this.src='https://via.placeholder.com/400x300/2d1b4e/e0d5c7?text=Foto+6'" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOVE STORY / OUR JOURNEY SECTION -->
+        <section class="section story-section" id="story">
+            <div class="section-bg-overlay"></div>
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Our Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Awal Bertemu</h3>
+                            <span class="timeline-date">November 2010</span>
+                            <p>Berawal dari pertemuan tidak terduga di sekolah, sebuah perkenalan sederhana yang menjadi awal dari segalanya.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Jatuh Cinta</h3>
+                            <span class="timeline-date">Januari 2011</span>
+                            <p>Seiring berjalannya waktu, kebersamaan membuat kami menyadari bahwa perasaan ini lebih dari sekadar pertemanan.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Lamaran</h3>
+                            <span class="timeline-date">Agustus 2019</span>
+                            <p>Dengan penuh keberanian, kami memutuskan untuk melangkah ke jenjang yang lebih serius dan meminta restu kedua orang tua.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Pernikahan</h3>
+                            <span class="timeline-date">April 2025</span>
+                            <p>Dan Insha Allah di tanggal yang telah ditentukan, kami akan melangsungkan pernikahan dengan niat beribadah karena Allah SWT.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WEDDING GIFT SECTION -->
+        <section class="section gift-section" id="gift">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Wedding Gift</h2>
+                <p class="gift-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Tanpa mengurangi rasa hormat, bagi Anda yang ingin memberikan tanda kasih untuk kami, dapat melalui:
+                </p>
+                <button class="btn-gift-toggle" id="btnGiftToggle" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-gift"></i> KLIK DISINI
+                </button>
+                <div class="gift-cards" id="giftCards">
+                    <!-- Bank BCA -->
+                    <div class="gift-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="gift-bank-logo">
+                            <i class="fas fa-university"></i>
+                            <span>Bank BCA</span>
+                        </div>
+                        <p class="gift-account-name">a.n Aditya Ramadani</p>
+                        <p class="gift-account-number" id="accountBCA">1234567890</p>
+                        <button class="btn-copy" onclick="copyToClipboard('accountBCA', this)">
+                            <i class="far fa-copy"></i> Salin Nomor
+                        </button>
+                    </div>
+
+                    <!-- DANA -->
+                    <div class="gift-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="gift-bank-logo">
+                            <i class="fas fa-wallet"></i>
+                            <span>DANA</span>
+                        </div>
+                        <p class="gift-account-name">a.n Fiona Ridwan</p>
+                        <p class="gift-account-number" id="accountDANA">0812345678</p>
+                        <button class="btn-copy" onclick="copyToClipboard('accountDANA', this)">
+                            <i class="far fa-copy"></i> Salin Nomor
+                        </button>
+                    </div>
+
+                    <!-- Kirim Hadiah -->
+                    <div class="gift-card gift-card-address" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="gift-bank-logo">
+                            <i class="fas fa-gift"></i>
+                            <span>Kirim Hadiah</span>
+                        </div>
+                        <p class="gift-account-name">Alamat Pengiriman</p>
+                        <p class="gift-account-number" id="giftAddress">Penerima: Aditya Ramadani<br>Ngalau i, Jl. Raya Bukittinggi-Payakumbuh</p>
+                        <button class="btn-copy" onclick="copyToClipboard('giftAddress', this)">
+                            <i class="far fa-copy"></i> Salin Alamat
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP / UCAPAN & DOA SECTION -->
+        <section class="section rsvp-section" id="rsvp">
+            <div class="section-bg-overlay"></div>
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Ucapan & Doa</h2>
+
+                <!-- Attendance Count -->
+                <div class="attendance-stats" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-card stat-hadir">
+                        <span class="stat-number" id="countHadir">0</span>
+                        <span class="stat-label">Hadir</span>
+                    </div>
+                    <div class="stat-card stat-tidak">
+                        <span class="stat-number" id="countTidak">0</span>
+                        <span class="stat-label">Tidak Hadir</span>
+                    </div>
+                    <div class="stat-card stat-ragu">
+                        <span class="stat-number" id="countRagu">0</span>
+                        <span class="stat-label">Masih Ragu</span>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form class="rsvp-form" id="rsvpForm" data-aos="fade-up" data-aos-delay="200">
+                    <div class="form-group">
+                        <input type="text" id="rsvpName" placeholder="Nama" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="rsvpMessage" placeholder="Tuliskan ucapan & doa..." rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <select id="rsvpAttendance" required>
+                            <option value="" disabled selected>Konfirmasi Kehadiran</option>
+                            <option value="Hadir">Hadir</option>
+                            <option value="Tidak Hadir">Tidak Hadir</option>
+                            <option value="Masih Ragu">Masih Ragu</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-paper-plane"></i> Kirim
+                    </button>
+                </form>
+
+                <!-- Comments List -->
+                <div class="comments-list" id="commentsList">
+                    <!-- Comments will be populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CLOSING / TERIMA KASIH SECTION -->
+        <section class="section closing-section" id="closing">
+            <div class="closing-overlay"></div>
+            <div class="closing-content">
+                <h2 class="closing-title" data-aos="fade-up">Terima Kasih</h2>
+                <p class="closing-text" data-aos="fade-up" data-aos-delay="200">
+                    Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do'a restu kepada kami.
+                </p>
+                <h3 class="closing-names" data-aos="zoom-in" data-aos-delay="400">Adit & Fiona</h3>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>Made with <i class="fas fa-heart"></i> for our special day</p>
+        </footer>
+
+    </main>
+
+    <!-- MUSIC PLAYER (FIXED) -->
+    <div class="music-player" id="musicPlayer">
+        <audio id="bgMusic" loop>
+            <source src="assets/music.mp3" type="audio/mpeg">
+        </audio>
+        <button class="btn-music" id="btnMusic">
+            <i class="fas fa-music" id="musicIcon"></i>
+        </button>
+    </div>
+
+    <!-- NAVIGATION (FIXED BOTTOM) -->
+    <nav class="bottom-nav" id="bottomNav">
+        <a href="#top" class="nav-item active" data-section="top">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#couple" class="nav-item" data-section="couple">
+            <i class="fas fa-heart"></i>
+            <span>Mempelai</span>
+        </a>
+        <a href="#event" class="nav-item" data-section="event">
+            <i class="far fa-calendar-alt"></i>
+            <span>Acara</span>
+        </a>
+        <a href="#gallery" class="nav-item" data-section="gallery">
+            <i class="fas fa-images"></i>
+            <span>Galeri</span>
+        </a>
+        <a href="#rsvp" class="nav-item" data-section="rsvp">
+            <i class="fas fa-envelope"></i>
+            <span>RSVP</span>
+        </a>
+    </nav>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <img src="" alt="Gallery Photo" class="lightbox-img" id="lightboxImg">
+    </div>
+
+    <!-- Particles / Floating Elements -->
+    <div class="floating-elements" id="floatingElements"></div>
+
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+</html>
